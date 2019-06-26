@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const puppeteer = require('puppeteer');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.post('/', async (request, response) => {
     const browser = await puppeteer.launch();
